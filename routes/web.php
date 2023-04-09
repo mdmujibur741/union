@@ -17,16 +17,21 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.home.index');
 });
 
+Route::get('/blog', function () {
+    return view('frontend.blog.single');
+});
+
+Route::get('/blog/single', function () {
+    return view('frontend.blog.single');
+});
 
 
 // =============================Important Note=============================//
 // Some Reason Delete Method Not Working . That's Why I use Get Method//
 // ==========================================================================//
-
-
 
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function(){
           Route::resource('admin', AdminController::class)->except('show','destroy');
