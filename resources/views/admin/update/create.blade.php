@@ -25,14 +25,29 @@
 
 
                     <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="menuname">Update <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="menuname">Name <span class="required">*</span>
                     </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            <textarea name="update" class="form-control col-md-7 col-xs-12 @error('update') is-invalid @enderror">
-                            </textarea>
-                            @error('update')
+                            <input type="text" name="name" class="form-control col-md-7 col-xs-12 @error('name') is-invalid @enderror">
+                            @error('name')
                             <div class="py-3" style="color:#f00">{{ $message }}</div>
                          @enderror
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="name" class="col-md-2 col-form-label text-md-right">Sequence</label>
+                        <div class="col-md-8">
+                            <input type="number" class="form-control" name="sequence" value="" style="width:30%">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="name" class="col-md-2 col-form-label text-md-right">Status</label>
+                        <div class="col-md-8">
+                            <select name="status" class="form-control">
+                    <option value="1">Display</option>
+                 <option value="0">Not Display</option>
+               </select>
                         </div>
                     </div>
 

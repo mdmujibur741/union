@@ -10,6 +10,10 @@ use Illuminate\Http\Request;
 use App\Models\HouseShopType;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
+use App\Imports\ShopsImport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ShopsExport;
+
 
 class ShopController extends Controller
 {
@@ -77,4 +81,23 @@ class ShopController extends Controller
         Session::flash('success','Shop Delete Successfully!');
         return Redirect::back();
     }
+
+
+    // Excel File Import
+    public function import (Request $request)
+    {
+      Excel::import(new ShopsImport, $request->file('file'));
+      Session::flash('success','Shops Import Successfully!');
+      return Redirect::back();
+    }
+
+    // Excel File Export
+    public function export()
+    {
+      return Excel::download(new ShopsExport, 'shops.csv');
+    }
+
+
+
+    
 }

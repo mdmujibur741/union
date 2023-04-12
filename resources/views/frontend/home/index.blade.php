@@ -4,7 +4,7 @@
 
 
 {{-- banner  --}}
-<section>
+<section class="admin-home">
      <div class="container">
         <div class="wrapper banner-slider">
             <div class="my-slider">

@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('house_type')->nullable();
             $table->string('yearly_tax')->nullable();
             $table->text('opinion')->nullable();
-            $table->foreignId('type_id')->constrained('house_shop_types')->cascadeOnDelete();  //Holding shop type model
+            $table->foreignId('type_id')->constrained('house_shop_types')->cascadeOnDelete()->nullable();  //Holding shop type model
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->timestamps();
         });

@@ -12,15 +12,19 @@
         </div>
         <div class="col-sm-9 breadcrumb" style="float:right; text-align:right">
             <span style="margin-right:10px; font-size:15px">Total: 100</span>
-            <a href="#" style="color:#000; margin-right:0;" class="btn btn-success btn-sm"><i class="fa fa-check"></i>
+            {{-- <a href="#" style="color:#000; margin-right:0;" class="btn btn-success btn-sm"><i class="fa fa-check"></i>
                 Approved</a>
             <a href="#" style="color:#000; margin-right:0;" class="btn btn-warning btn-sm"><i class="fa fa-times"></i>
-                Disapproved</a>
+                Disapproved</a> --}}
             <a href="#" style="color:#fff; margin-right:0;" class="btn btn-danger btn-sm"><i class="fa fa-times"></i>
                 Multiple Delete</a>
             <a href="Shop-new-create.html" style="color:#fff; margin-right:0" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Create New Shop Info</a>
-            <a href="#" class="btn btn-success btn-sm" style="color:#fff"><i class="fa fa-download"></i> Export</a>
-            <a href="#" class="btn btn-info	 btn-sm" style="color:#fff" data-toggle="modal" data-target="#exampleModalLong"><i class="fa fa-upload"></i> Import</a>
+            <a href="{{route('admin.shops.export')}}" class="btn btn-success btn-sm" style="color:#fff"><i class="fa fa-download"></i> Export</a>
+        <form action="{{route('admin.shops.import')}}" method="post" enctype="multipart/form-data"> 
+            @csrf
+              <input type="file" class="bg-primary " name="file" style="width: 300px; padding:4px;">
+            <button class="btn btn-info	 btn-sm" style="color:#fff" data-toggle="modal" data-target="#exampleModalLong"><i class="fa fa-upload"></i> Import</button>    
+        </form>
         </div>
     </div>
 </div>

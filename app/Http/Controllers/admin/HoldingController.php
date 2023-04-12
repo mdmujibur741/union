@@ -10,6 +10,10 @@ use App\Models\HouseShopType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\HoldingsImport;
+use App\Exports\HoldingsExport;
+
 
 class HoldingController extends Controller
 {
@@ -88,5 +92,20 @@ class HoldingController extends Controller
         Session::flash('success','Holding Delete Successfully!');
         return Redirect::back();
     }
+
+
+     // Excel File Import
+     public function import (Request $request)
+     {
+       Excel::import(new HoldingsImport, $request->file('file'));
+       Session::flash('success','Holding Import Successfully!');
+       return Redirect::back();
+     }
+ 
+     // Excel File Export
+     public function export()
+     {
+       return Excel::download(new HoldingsExport, 'Holding.csv');
+     }
 
 }

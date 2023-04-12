@@ -45,8 +45,12 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function(){
           Route::resource('home_shop_types', HouseOrShopTypeController::class)->except('show','destroy');
           Route::get('home_shop_types/delete/{id}', [HouseOrShopTypeController::class, 'destroy'])->name('home_shop_types.destroy');
           Route::resource('holdings', HoldingController::class)->except('destroy');
+          Route::post('holding/import',[HoldingController::class, 'import'])->name('holdings.import');
+          Route::get('holding/export',[HoldingController::class, 'export'])->name('holdings.export');
           Route::get('holdings/delete/{id}', [HoldingController::class, 'destroy'])->name('holdings.destroy');
-          Route::resource('shops', ShopController::class)->except('destroy');
+          Route::resource('shops', ShopController::class)->except('destroy','show');
+          Route::post('shops/import',[ShopController::class,'import'])->name('shops.import');
+          Route::get('shops/export',[ShopController::class,'export'])->name('shops.export');
           Route::get('shops/delete/{id}', [ShopController::class, 'destroy'])->name('shops.destroy');
           Route::resource('years',YearController::class)->except('destroy');
           Route::get('years/delete/{id}', [YearController::class, 'destroy'])->name('years.destroy');
@@ -61,6 +65,7 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function(){
          Route::resource('receipts', ReceiptController::class)->except('destroy');
          Route::get('receipts/destroy/{id}',[ReceiptController::class,'destroy'])->name('receipts.destroy');
          Route::resource('members',MemberController::class)->except('destroy');
+         Route::get('members/destroy/{id}', [MemberController::class,'destroy'])->name('members.destroy');
 }); 
 
 

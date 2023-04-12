@@ -17,6 +17,7 @@ class MemberController extends Controller
     {
         $members = Member::orderBy('id','asc')->paginate(10);
           return view('admin.member.index',compact('members'));
+         
     }
 
     public function create()
@@ -50,8 +51,10 @@ class MemberController extends Controller
 
     public function edit($id)
     {
+        $display = [ 'Not Display','Display' ];
+
          $member = Member::findOrFail($id);
-        return view('admin.member.index',compact('member'));
+        return view('admin.member.edit',compact('member','display'));
     }
 
 
@@ -82,5 +85,18 @@ class MemberController extends Controller
         ]);
         Session::flash('success','Member Data Update');
         return to_route('admin.members.index');
+    }
+
+
+    public function destroy($id)
+    {
+        $member = Member::findOrFail($id);
+        if($member->image){
+            Storage::delete($member->image);
+            
+       }
+       $member->delete();
+       Session::flash('success','Member Data Deleted');
+       return Redirect::back();
     }
 }

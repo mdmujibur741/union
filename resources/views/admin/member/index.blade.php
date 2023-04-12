@@ -61,12 +61,12 @@
                         <th width="10%" align="center"><span style="background:#006600; padding:3px 8px; border-radius:5px; margin:2px;float:left; font-size:16px;text-align:center"><i class="fa fa-check"></i> </span></th>
                         <td align="right">
                             <div style="width:50%; float:left">
-                                <a href="" class="btn btn-warning" style="font-size: 12px; float:left; padding:3px 5px"><i
+                                <a href="{{route('admin.members.edit',$item->id)}}" class="btn btn-warning" style="font-size: 12px; float:left; padding:3px 5px"><i
                                             class="fa fa-edit"></i></a>
                             </div>
                             <div style="width:50%; float:left">
-                                <button type="button" class="btn btn-danger" style="font-size: 12px; float:left; padding:3px 5px"><i
-                                            class="fa fa-trash"></i></button>
+                                <a href="{{route('admin.members.destroy',$item->id)}}" class="btn btn-danger" style="font-size: 12px; float:left; padding:3px 5px"><i
+                                            class="fa fa-trash"></i></a>
                             </div>
                         </td>
                     </tr>
@@ -75,6 +75,9 @@
 
                         </tbody>
                     </table>
+                    <div class="text-center">
+                        {{ $members->links() }}
+                     </div>
                 </form>
             </div>
         </div>
