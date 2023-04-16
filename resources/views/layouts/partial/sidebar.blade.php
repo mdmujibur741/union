@@ -191,9 +191,9 @@
                         <a href="#" aria-haspopup="true">
                             <span class="sidenav-icon fa fa-user"></span><span class="sidenav-label">Logo</span><i class="fa-solid fa-angle-right arrow-icons"></i></a>
                         <ul class="sidenav-subnav collapse">
-                            <li><a href="Logo-list.html"><span
+                            <li><a href="{{route('admin.logos.index')}}"><span
                                     class="sidenav-icon fa fa-bars"></span>Logo List</a></li>
-                            <li><a href="Logo-new-create.html"><span
+                            <li><a href="{{route('admin.logos.create')}}"><span
                                     class="sidenav-icon fa fa-plus"></span>New Logo</a></li>
                         </ul>
                     </li>
@@ -203,9 +203,9 @@
                         <a href="#" aria-haspopup="true">
                             <span class="sidenav-icon fa fa-user"></span><span class="sidenav-label">Banner</span><i class="fa-solid fa-angle-right arrow-icons"></i></a>
                         <ul class="sidenav-subnav collapse">
-                            <li><a href="Banner-list.html"><span
+                            <li><a href="{{route('admin.banners.index')}}"><span
                                     class="sidenav-icon fa fa-bars"></span>Banner List</a></li>
-                            <li><a href="Banner-new-create.html"><span
+                            <li><a href="{{route('admin.banners.create')}}"><span
                                     class="sidenav-icon fa fa-plus"></span>New Banner</a></li>
                         </ul>
                     </li>
@@ -214,9 +214,9 @@
                         <a href="#" aria-haspopup="true">
                             <span class="sidenav-icon fa fa-user"></span><span class="sidenav-label">Slider</span><i class="fa-solid fa-angle-right arrow-icons"></i></a>
                         <ul class="sidenav-subnav collapse">
-                            <li><a href="Slider-list.html"><span
+                            <li><a href="{{route('admin.sliders.index')}}"><span
                                     class="sidenav-icon fa fa-bars"></span>Slider List</a></li>
-                            <li><a href="Slider-create-new.html"><span
+                            <li><a href="{{route('admin.sliders.create')}}"><span
                                     class="sidenav-icon fa fa-plus"></span>New Slider</a></li>
                         </ul>
                     </li>
@@ -225,9 +225,9 @@
                             class="sidenav-icon fa fa-list"></span><span class="sidenav-label">Usefull
                             Link</span><i class="fa-solid fa-angle-right arrow-icons"></i></a>
                         <ul class="sidenav-subnav collapse">
-                            <li><a href="Usefull-list.html"><span
+                            <li><a href="{{route('admin.usefulls.index')}}"><span
                                     class="sidenav-icon fa fa-bars"></span>Link List</a></li>
-                            <li><a href="Usefull-create-new.html"><span
+                            <li><a href="{{route('admin.usefulls.create')}}"><span
                                     class="sidenav-icon fa fa-plus"></span>New Link</a></li>
                         </ul>
                     </li>
@@ -247,9 +247,9 @@
                             class="sidenav-icon fa fa-list"></span><span
                             class="sidenav-label">Content</span><i class="fa-solid fa-angle-right arrow-icons"></i></a>
                         <ul class="sidenav-subnav collapse">
-                            <li><a href="contents-list.html"><span
+                            <li><a href="{{route('admin.contents.index')}}"><span
                                     class="sidenav-icon fa fa-bars"></span>Content List</a></li>
-                            <li><a href="contents-create-new.html"><span
+                            <li><a href="{{route('admin.contents.create')}}"><span
                                     class="sidenav-icon fa fa-plus"></span>Content Menu</a></li>
                         </ul>
                     </li>

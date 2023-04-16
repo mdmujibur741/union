@@ -1,9 +1,12 @@
 <?php
 
 use App\Http\Controllers\admin\AdminController;
+use App\Http\Controllers\admin\BannerController;
+use App\Http\Controllers\admin\ContentController;
 use App\Http\Controllers\admin\HoldingController;
 use App\Http\Controllers\admin\HoldingTaxController;
 use App\Http\Controllers\admin\HouseOrShopTypeController;
+use App\Http\Controllers\admin\LogoController;
 use App\Http\Controllers\admin\MemberController;
 use App\Http\Controllers\admin\NoticeController;
 use App\Http\Controllers\admin\NoticeTypeController;
@@ -12,7 +15,9 @@ use App\Http\Controllers\admin\ReceiptController;
 use App\Http\Controllers\admin\SecretaryController;
 use App\Http\Controllers\admin\ShopController;
 use App\Http\Controllers\admin\ShopTaxController;
+use App\Http\Controllers\admin\SliderController;
 use App\Http\Controllers\admin\UpdateController;
+use App\Http\Controllers\admin\UsefullLinkController;
 use App\Http\Controllers\admin\VideoController;
 use App\Http\Controllers\admin\YearController;
 use App\Http\Controllers\ProfileController;
@@ -75,7 +80,18 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function(){
          Route::get('photos/destroy/{id}', [PhotoController::class,'destroy'])->name('photos.destroy');
          Route::resource('videos', VideoController::class)->except('destroy');
          Route::get('videos/destroy/{id}', [VideoController::class,'destroy'])->name('videos.destroy');
-}); 
+         Route::resource('logos', LogoController::class)->except('destroy');
+         Route::get('logos/destroy/{id}', [LogoController::class,'destroy'])->name('logos.destroy');
+         Route::resource('banners', BannerController::class)->except('destroy');
+         Route::get('banners/destroy/{id}', [BannerController::class,'destroy'])->name('banners.destroy');
+         Route::resource('sliders', SliderController::class)->except('destroy');
+         Route::get('sliders/destroy/{id}', [SliderController::class,'destroy'])->name('sliders.destroy');
+         Route::resource('usefulls', UsefullLinkController::class)->except('destroy');
+         Route::get('usefulls/destroy/{id}', [UsefullLinkController::class,'destroy'])->name('usefulls.destroy');
+         Route::resource('contents', ContentController::class)->except('destroy');
+         Route::get('contents/destroy/{id}', [ContentController::class,'destroy'])->name('contents.destroy');
+
+        }); 
 
 
 
