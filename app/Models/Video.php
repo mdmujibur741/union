@@ -5,11 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Update extends Model
+class Video extends Model
 {
     use HasFactory;
 
-
-
-    protected $fillable = ['headline', 'details', 'image', 'meta_details', 'sequence', 'status'];
+    protected $fillable = ['title',	'image', 'youtube'	];
 }

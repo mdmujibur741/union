@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class Holding extends Model
+class Holding extends Model implements WithHeadingRow
 {
     use HasFactory;
 

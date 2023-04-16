@@ -20,10 +20,13 @@
                 Multiple Delete</a>
             <a href="Shop-new-create.html" style="color:#fff; margin-right:0" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Create New Shop Info</a>
             <a href="{{route('admin.shops.export')}}" class="btn btn-success btn-sm" style="color:#fff"><i class="fa fa-download"></i> Export</a>
-        <form action="{{route('admin.shops.import')}}" method="post" enctype="multipart/form-data"> 
+        <form class="" action="{{route('admin.shops.import')}}" method="post" enctype="multipart/form-data"> 
             @csrf
-              <input type="file" class="bg-primary " name="file" style="width: 300px; padding:4px;">
-            <button class="btn btn-info	 btn-sm" style="color:#fff" data-toggle="modal" data-target="#exampleModalLong"><i class="fa fa-upload"></i> Import</button>    
+            <div  style="padding-top:4px; display: flex;
+            justify-content: space-between;">
+                <input type="file" class="btn btn-info btn-sm " required name="file" style="width:300px; ">
+                <button class="btn btn-info	 btn-sm" style="color:#fff" data-toggle="modal" data-target="#exampleModalLong"><i class="fa fa-upload"></i> Import</button>    
+            </div>    
         </form>
         </div>
     </div>

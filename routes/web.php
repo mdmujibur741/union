@@ -7,10 +7,13 @@ use App\Http\Controllers\admin\HouseOrShopTypeController;
 use App\Http\Controllers\admin\MemberController;
 use App\Http\Controllers\admin\NoticeController;
 use App\Http\Controllers\admin\NoticeTypeController;
+use App\Http\Controllers\admin\PhotoController;
 use App\Http\Controllers\admin\ReceiptController;
 use App\Http\Controllers\admin\SecretaryController;
 use App\Http\Controllers\admin\ShopController;
 use App\Http\Controllers\admin\ShopTaxController;
+use App\Http\Controllers\admin\UpdateController;
+use App\Http\Controllers\admin\VideoController;
 use App\Http\Controllers\admin\YearController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -66,6 +69,12 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function(){
          Route::get('receipts/destroy/{id}',[ReceiptController::class,'destroy'])->name('receipts.destroy');
          Route::resource('members',MemberController::class)->except('destroy');
          Route::get('members/destroy/{id}', [MemberController::class,'destroy'])->name('members.destroy');
+         Route::resource('updates', UpdateController::class)->except('destroy');
+         Route::get('updates/destroy/{id}', [UpdateController::class,'destroy'])->name('updates.destroy');
+         Route::resource('photos', PhotoController::class)->except('destroy');
+         Route::get('photos/destroy/{id}', [PhotoController::class,'destroy'])->name('photos.destroy');
+         Route::resource('videos', VideoController::class)->except('destroy');
+         Route::get('videos/destroy/{id}', [VideoController::class,'destroy'])->name('videos.destroy');
 }); 
 
 

@@ -33,23 +33,25 @@
                                     <thead>
                                         <tr role="row">
                                             <th width="2%" class="sorting_desc" tabindex="0" aria-controls="responsive-datatable" rowspan="1" colspan="1" aria-sort="descending" aria-label=": activate to sort column ascending" style="width: 24.1719px;"><input name="checkbox" onclick="checkedAll();" type="checkbox" readonly="readonly"></th>
-                                            <th width="49%" class="sorting" tabindex="0" aria-controls="responsive-datatable" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" style="width: 742.438px;">Name</th>
-                                            <th width="12%" align="right" class="sorting" tabindex="0" aria-controls="responsive-datatable" rowspan="1" colspan="1" aria-label="Action: activate to sort column descending" style="width: 153.391px;">Action</th>
+                                            <th width="20%" class="sorting" tabindex="0" aria-controls="responsive-datatable" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" style="width: 742.438px;">Headline</th>
+                                            <th width="40%" class="sorting" tabindex="0" aria-controls="responsive-datatable" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" style="width: 742.438px;">Details</th>
+                                            <th width="38%" align="right" class="sorting" tabindex="0" aria-controls="responsive-datatable" rowspan="1" colspan="1" aria-label="Action: activate to sort column descending" style="width: 153.391px;">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
 
-                                    @foreach ($noticeTypes as $key=>$item)
+                                    @foreach ($updates as $key=>$item)
                                     <tr id="tablerow1" class="tablerow odd" role="row">
                                         <td class="sorting_1"><input type="checkbox" name="summe_code[]" id="summe_code1" value="1"></td>
-                                        <td> {{$item->name}} </td>
+                                        <td> {{$item->headline}} </td>
+                                        <td> {!! $item->details !!} </td>
                                         <td align="right">
                                             <div style="width:50%; float:left">
-                                                <a href="{{route('admin.notice_types.edit', $item->id)}}" class="btn btn-warning" style="font-size: 12px; float:left; padding:3px 5px"><i class="fa fa-edit"></i> Edit</a>
+                                                <a href="{{route('admin.updates.edit', $item->id)}}" class="btn btn-warning" style="font-size: 12px; float:left; padding:3px 5px"><i class="fa fa-edit"></i> Edit</a>
                                             </div>
                                             <div style="width:50%; float:left">
                                               
-                                                <a href="{{route('admin.notice_types.destroy',$item->id)}}" class="btn btn-danger" style="font-size: 12px; float:left; padding:3px 5px"><i class="fa fa-trash"></i>  </a>
+                                                <a href="{{route('admin.updates.destroy',$item->id)}}" class="btn btn-danger" style="font-size: 12px; float:left; padding:3px 5px"><i class="fa fa-trash"></i>  </a>
                                                
                                             </div>
                                         </td>
@@ -59,7 +61,7 @@
                                     </tbody>
                                 </table>
                                 <div class="text-center">
-                                    {{ $noticeTypes->links() }}
+                                    {{ $updates->links() }}
                                  </div>
                             </div>
                         </div>

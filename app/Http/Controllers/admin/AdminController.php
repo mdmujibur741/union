@@ -64,11 +64,9 @@ class AdminController extends Controller
 
 
         //    image
-
         if($request->hasFile('image')){
             if($admin->image){
                  Storage::delete($admin->image);
-                 
             }
             $image = $request->file('image')->store('image');
       }else{

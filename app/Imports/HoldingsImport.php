@@ -15,17 +15,17 @@ class HoldingsImport implements ToModel
     public function model(array $row)
     {
         return new Holding([
-            "name"=> $row[0],
-            "spouse_name"=> $row[1],
-            "gender"=> $row[2],
-            "village"=> $row[3],
-            "profession"=> $row[4],
-            "id_no"=> $row[5],
-            "holding_no"=> $row[6],
-            "word_no"=> $row[7],
-            "house_type"=> $row[8],
-            "yearly_tax"=> $row[9],
-            "opinion"=> $row[10],
+            "name"=> $row['name'],
+            "spouse_name"=> $row['spouse_name'],
+            "gender"=> $row['gender'],
+            "village"=> $row['village'],
+            "profession"=> $row['profession'],
+            "id_no"=> $row['id_no'],
+            "holding_no"=> $row['holding_no'],
+             "word_no"=> $row['word_no'],
+            "house_type"=> $row['house_type'],
+             "yearly_tax"=> $row['yearly_tax'],
+            "opinion"=> $row['opinion'],
             "user_id"=> auth()->user()->id,
         ]);
     }

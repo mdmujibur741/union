@@ -57,17 +57,17 @@
                                     class="sidenav-icon fa fa-plus"></span>Add New Notice</a></li>
                         </ul>
                     </li>
-{{-- 
+
                     <li class="sidenav-item has-subnav"><a href="#" aria-haspopup="true"><span
                             class="sidenav-icon fa fa-map"></span><span class="sidenav-label">Latest
                             Update</span><i class="fa-solid fa-angle-right arrow-icons"></i></a>
                         <ul class="sidenav-subnav collapse">
-                            <li><a href="Latest-update-list.html"><span
+                            <li><a href="{{route('admin.updates.index')}}"><span
                                     class="sidenav-icon fa fa-bars"></span>Update List</a></li>
-                            <li><a href="latest-update-create.html"><span
+                            <li><a href="{{route('admin.updates.create')}}"><span
                                     class="sidenav-icon fa fa-plus"></span>Add New Update</a></li>
                         </ul>
-                    </li> --}}
+                    </li>
 
                     <li class="sidenav-item has-subnav"><a href="#" aria-haspopup="true"><span
                             class="sidenav-icon fa fa-map"></span><span
@@ -168,9 +168,9 @@
                             <span class="sidenav-icon fa fa-map"></span><span class="sidenav-label">Photo
                             Gallery</span><i class="fa-solid fa-angle-right arrow-icons"></i></a>
                         <ul class="sidenav-subnav collapse">
-                            <li><a href="Gallery-list.html"><span
+                            <li><a href="{{route('admin.photos.index')}}"><span
                                     class="sidenav-icon fa fa-bars"></span>Gallery List</a></li>
-                            <li><a href="Gallery-create.html"><span
+                            <li><a href="{{route('admin.photos.create')}}"><span
                                     class="sidenav-icon fa fa-plus"></span>Add New Image</a></li>
                         </ul>
                     </li>
@@ -180,9 +180,9 @@
                             class="sidenav-icon fa fa-list"></span><span class="sidenav-label">Video
                             Gallery</span><i class="fa-solid fa-angle-right arrow-icons"></i></a>
                         <ul class="sidenav-subnav collapse">
-                            <li><a href="Video-list.html"><span
+                            <li><a href="{{route('admin.videos.index')}}"><span
                                     class="sidenav-icon fa fa-bars"></span>Video List</a></li>
-                            <li><a href="Video-create.html"><span
+                            <li><a href="{{route('admin.videos.create')}}"><span
                                     class="sidenav-icon fa fa-plus"></span>New Video</a></li>
                         </ul>
                     </li>
