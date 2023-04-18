@@ -63,7 +63,7 @@
                                         <i class="fa fa-edit"></i></a>
                                  
 
-                                        <a href="{{route('admin.secretary.destroy',$item->id)}}" class="btn btn-danger" style="font-size: 12px; float:left; padding:3px 5px"><i class="fa fa-trash"></i>  </a>
+                                        <a onclick="return confirm('Are you sure you want to delete this item?');"  href="{{route('admin.secretary.destroy',$item->id)}}" class="btn btn-danger" style="font-size: 12px; float:left; padding:3px 5px"><i class="fa fa-trash"></i>  </a>
 
                                 </td>
                             </tr>

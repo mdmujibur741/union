@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UseFullLinkRequest extends FormRequest
+class MenuRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,10 +22,10 @@ class UseFullLinkRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required',
-             'type' => 'required',
-              'image' => 'nullable',
-               'link' => 'nullable'
+            'menu' => 'required',
+            'parent_id' => 'nullable',
+             'page_structure' => 'required',
+              'sequence' => 'nullable'	
         ];
     }
 }

@@ -48,13 +48,16 @@
                                     <a href="{{route('admin.banners.edit', $item->id)}}" class="btn btn-warning" style="font-size: 12px; float:left; padding:3px 5px"><i class="fa fa-edit"></i></a>
                                 </div>
                                 <div style="width:50%; float:left">
-                                    <a href="{{route('admin.banners.destroy', $item->id)}}" class="btn btn-danger" style="font-size: 12px; float:left; padding:3px 5px"><i class="fa fa-trash"></i></a>
+                                    <a href="{{route('admin.banners.destroy', $item->id)}}" onclick="return confirm('Are you sure you want to delete this item?');"  class="btn btn-danger" style="font-size: 12px; float:left; padding:3px 5px"><i class="fa fa-trash"></i></a>
                                 </div>
                             </td>
                         </tr>
                           @endforeach
                         </tbody>
                     </table>
+                    <div class="text-center">
+                        {{ $banners->links() }}
+                     </div>
                 </form>
             </div>
         </div>

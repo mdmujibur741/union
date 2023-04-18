@@ -39,7 +39,7 @@ class AdminController extends Controller
                 'designation' => $request->designation,
                 'image' => $image,
             ]);
-            Session::flash('success','Admin Add Successfully!');
+            Session::flash('success','Admin Add SuccessfullY!');
             return Redirect::back();
     }
 

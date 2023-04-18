@@ -51,7 +51,7 @@
                                             </div>
                                             <div style="width:50%; float:left">
                                               
-                                                <a href="{{route('admin.updates.destroy',$item->id)}}" class="btn btn-danger" style="font-size: 12px; float:left; padding:3px 5px"><i class="fa fa-trash"></i>  </a>
+                                                <a onclick="return confirm('Are you sure you want to delete this item?');"  href="{{route('admin.updates.destroy',$item->id)}}" class="btn btn-danger" style="font-size: 12px; float:left; padding:3px 5px"><i class="fa fa-trash"></i>  </a>
                                                
                                             </div>
                                         </td>

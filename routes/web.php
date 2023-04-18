@@ -8,6 +8,7 @@ use App\Http\Controllers\admin\HoldingTaxController;
 use App\Http\Controllers\admin\HouseOrShopTypeController;
 use App\Http\Controllers\admin\LogoController;
 use App\Http\Controllers\admin\MemberController;
+use App\Http\Controllers\admin\MenuController;
 use App\Http\Controllers\admin\NoticeController;
 use App\Http\Controllers\admin\NoticeTypeController;
 use App\Http\Controllers\admin\PhotoController;
@@ -20,22 +21,19 @@ use App\Http\Controllers\admin\UpdateController;
 use App\Http\Controllers\admin\UsefullLinkController;
 use App\Http\Controllers\admin\VideoController;
 use App\Http\Controllers\admin\YearController;
+use App\Http\Controllers\frontend\BlogController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\frontend\HoldingController as FrHoldingController;
+use App\Http\Controllers\frontend\ShopController as FrShopController;
 
 Route::get('/', function () {
     return view('frontend.home.index');
 });
 
-Route::get('/blog', function () {
-    return view('frontend.blog.single');
-});
-
-Route::get('/blog/single', function () {
-    return view('frontend.blog.single');
-});
-
+Route::get('/blog', [BlogController::class, 'blog'])->name('web.blog');
+Route::get('/holding', [FrHoldingController::class, 'holding'])->name('web.holding');
+Route::get('/shop',[FrShopController::class, 'shop'])->name('web.shop');
 
 // =============================Important Note=============================//
 // Some Reason Delete Method Not Working . That's Why I use Get Method//
@@ -88,8 +86,11 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function(){
          Route::get('sliders/destroy/{id}', [SliderController::class,'destroy'])->name('sliders.destroy');
          Route::resource('usefulls', UsefullLinkController::class)->except('destroy');
          Route::get('usefulls/destroy/{id}', [UsefullLinkController::class,'destroy'])->name('usefulls.destroy');
+         Route::resource('menus', MenuController::class)->except('destroy');
+         Route::get('menus/destroy/{id}', [MenuController::class,'destroy'])->name('menus.destroy');
          Route::resource('contents', ContentController::class)->except('destroy');
          Route::get('contents/destroy/{id}', [ContentController::class,'destroy'])->name('contents.destroy');
+
 
         }); 
 

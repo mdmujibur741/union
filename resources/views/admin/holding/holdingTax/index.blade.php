@@ -49,7 +49,7 @@
                                 <td align="center">
                                     <a href="{{route('admin.holding_tax.edit',$item->id)}}" class="btn btn-warning btn-xs" style="font-size: 12px; float:left; margin-right:5px;" title="Edit">
                                         <i class="fa fa-edit"></i></a>
-                                    <a href="{{route('admin.holding_tax.destroy',$item->id)}}" class="btn btn-danger btn-xs" style="font-size: 12px; float:left;"><i
+                                    <a onclick="return confirm('Are you sure you want to delete this item?');"  href="{{route('admin.holding_tax.destroy',$item->id)}}" class="btn btn-danger btn-xs" style="font-size: 12px; float:left;"><i
                                                 class="fa fa-trash"></i></a>
                                 </td>
                             </tr>

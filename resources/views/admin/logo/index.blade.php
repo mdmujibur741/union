@@ -54,7 +54,7 @@
                                     <a href="{{route('admin.logos.edit', $item->id)}}" class="btn btn-warning" style="font-size: 12px; float:left; padding:3px 5px"><i class="fa fa-edit"></i></a>
                                 </div>
                                 <div style="width:50%; float:left">
-                                    <a href="{{route('admin.logos.destroy', $item->id)}}" class="btn btn-danger" style="font-size: 12px; float:left; padding:3px 5px"><i class="fa fa-trash"></i></a>
+                                    <a onclick="return confirm('Are you sure you want to delete this item?');"  href="{{route('admin.logos.destroy', $item->id)}}" class="btn btn-danger" style="font-size: 12px; float:left; padding:3px 5px"><i class="fa fa-trash"></i></a>
                                 </div>
                             </td>
                         </tr>
@@ -63,6 +63,9 @@
 
                         </tbody>
                     </table>
+                    <div class="text-center">
+                        {{ $logos->links() }}
+                     </div>
                 </form>
             </div>
         </div>

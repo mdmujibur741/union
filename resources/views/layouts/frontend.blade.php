@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>১৫ নং ছদাহা ইউনিয়ন পরিষদ</title>
-    <link rel="stylesheet" href="{{asset('frontend/css/bootstrap.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('frontend/css/bootstrap.css')}}"> --}}
     <link rel="stylesheet" href="{{asset('frontend/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/font-awesome-4.7.0/css/font-awesome.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
@@ -42,50 +42,10 @@
 
             </div>
             <header class="pb-5 heder-info">
-                <nav class="main-nav float-right d-none d-lg-block">
-                    <ul class="p-0">
-                        <li class="active"><a href="#">হোম</a></li>
-                        <li class=""><a href="#">যোগাযোগ </a>
-                        </li>
-                        <li class=""><a href="#">ইউপি সদস্যবৃন্দ </a>
-                        </li>
-                        <li class=""><a href="#">হোল্ডিং তথ্য সমূহ </a>
-                        </li>
-                        <li class=""><a href="#">পটভূমি </a>
-                        </li>
-                        <li class=""><a href="#">ছদাহা বাজার </a>
-                        </li>
-                        <li class=""><a href="blog.html">ব্লগ</a>
-                        </li>
-                        <li class="drop-down"><a href="#">অন্যান্য </a>
-                            <ul>
-                                <li class=""><a href="#">নোটিশ </a>
-                                </li>
-                                <li class=""><a href="#">ফটো গ্যালারী </a>
-                                </li>
-                                <li class=""><a href="#">ভিডিও গ্যালারী </a>
-                                </li>
-                            </ul>
-                        </li>
 
-                        <li style="float:right">
-                            <i class="bx bx-chevron-right"></i> 
-                            @if (Route::has('login'))
-                            <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
-                                @auth
-                                    <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
-                                @else
-                                    <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
-            
-                                 
-                                @endauth
-                            </div>
-                        @endif
-                            </li>
-
-                    </ul>
-                </nav>
-                <div class="">
+                    @include('layouts.partial.main')
+                
+                    <div class="">
                     <div class="updatearea-mq">
                         <div class="row m-0">
                             <div class="col-sm-2 " style="margin:0; padding:0">
@@ -163,7 +123,7 @@
     </div>
 
 
-    <script src="{{asset('frontend/js/bootstrap.js')}}"></script>
+    {{-- <script src="{{asset('frontend/js/bootstrap.js')}}"></script> --}}
     <script src="{{asset('frontend/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('frontend/js/jqurey.js')}}"></script>
     <script src="{{asset('frontend/js/custom.js')}}"></script>

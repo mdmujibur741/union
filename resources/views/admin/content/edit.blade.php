@@ -19,7 +19,7 @@
         <div class="card">
 
             <div class="row" style="margin:10px">
-                <form method="post" action="{{route('admin.contents.store')}}" class="form-horizontal" enctype="multipart/form-data">
+                <form method="post" action="{{route('admin.contents.update', $content->id)}}" class="form-horizontal" enctype="multipart/form-data">
                     @csrf
 
                     <div class="col-sm-12" style="margin-bottom:10px;">
@@ -31,7 +31,7 @@
                                 <select name="menu_id" class="form-control @error('menu_id') is-invalid @enderror">
                                     <option value="">Select a Menu Item</option>
                                             @foreach ($menu as $item)
-                                                 <option value="{{$item->id}}"> {{$item->menu}} </option>
+                                                 <option value="{{$item->id}}" > {{$item->menu}} </option>
                                             @endforeach
                                         </select>
                                         @error('menu_id')

@@ -20,6 +20,7 @@ class HoldingController extends Controller
     public function index()
     {
         $holdings = Holding::orderBy('id','asc')->paginate(20);
+       // return  $holdings;
         return view('admin.holding.index', compact('holdings'));
     }
 

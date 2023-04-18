@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('usefull_links', function (Blueprint $table) {
+        Schema::create('contents', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('menu_id')->constrained('menus')->cascadeOnDelete()->nullable();
             $table->string('title');
-            $table->string('type')->nullable();
-            $table->string('image')->nullable();
-            $table->longText('link')->nullable();
+            $table->longText('content')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('usefull_links');
+        Schema::dropIfExists('contents');
     }
 };

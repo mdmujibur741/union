@@ -2,7 +2,7 @@
 @section('content')
 <div class="col-sm-12">
     <div class="page-header" style="border:none; margin:0; padding:0">
-        <h3 class="page-title">View Article List</h3>
+        <h3 class="page-title">View Content List</h3>
         <div class="col-sm-6" style="margin:0; padding:0">
             <ol class="breadcrumb" style="padding:13px;">
                 <li><a href="index.html">Dashboard</a></li>
@@ -38,26 +38,32 @@
                             </thead>
                             <tbody>
 
-                                <tr class="tablerow">
-                                    <td><input type="checkbox" name="" value="" /></td>
-                                    <td>যোগাযোগের ঠিকানা</td>
-                                    <td>যোগাযোগ</td>
-                                    <td>2021-10-29 06:59:46</td>
-                                    <td>2023-03-04 13:04:25</td>
-                                    <td align="right">
-                                        <div style="width:50%; float:left">
-                                            <a href="contents-edit.html" class="btn btn-warning" style="font-size: 12px; float:left; padding:3px 5px"><i class="fa fa-edit"></i></a>
-                                        </div>
-                                        <div style="width:50%; float:left">
-                                            <button type="button" class="btn btn-danger" style="font-size: 12px; float:left; padding:3px 5px"><i class="fa fa-trash"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
+                              @foreach ($contents as $item)
+                              <tr class="tablerow">
+                                <td><input type="checkbox" name="" value="" /></td>
+                                <td> {{$item->title}} </td>
+                                <td> {{$item->menu->menu}} </td>
+                                <td> {{$item->created_at->format('d-m-Y')}} </td>
+                                <td> {{$item->updated_at->format('d-m-Y')}} </td>
+                                <td align="right">
+                                    <div style="width:50%; float:left">
+                                        <a href="{{route('admin.contents.edit', $item->id)}}" class="btn btn-warning" style="font-size: 12px; float:left; padding:3px 5px"><i class="fa fa-edit"></i></a>
+                                    </div>
+                                    <div style="width:50%; float:left">
+                                        <a href="{{route('admin.contents.destroy', $item->id)}}" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-danger" style="font-size: 12px; float:left; padding:3px 5px"><i class="fa fa-trash"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                              @endforeach
 
 
 
                             </tbody>
                         </table>
+
+                        <div class="text-center">
+                            {{ $contents->links() }}
+                         </div>
                 </div>
             </div>
         </div>

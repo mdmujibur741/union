@@ -103,7 +103,7 @@
                                                 </div>
                                                 <div style="width:33%; float:left">
 
-                                                    <a href="{{route('admin.admin.destroy',$item->id)}}" class="btn btn-danger" style="font-size: 12px; float:left; padding:3px 5px"><i class="fa fa-trash"></i>  </a>
+                                                    <a href="{{route('admin.admin.destroy',$item->id)}}" onclick="return confirm('Are you sure you want to delete this item?');"  class="btn btn-danger" style="font-size: 12px; float:left; padding:3px 5px"><i class="fa fa-trash"></i>  </a>
                                                     
                                                 </div>
                                             </td>

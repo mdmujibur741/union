@@ -43,7 +43,7 @@
                         <a href="{{route('admin.videos.edit',$item->id)}}" class="btn btn-warning" style="font-size: 12px; float:left; width:40%; margin-right:10px;">Edit</a>
                         <div style="width:50%; float:left">
                            
-                            <a href="{{route('admin.videos.destroy', $item->id)}}" class="btn btn-danger custom-delete-button">Delete</a>
+                            <a onclick="return confirm('Are you sure you want to delete this item?');"  href="{{route('admin.videos.destroy', $item->id)}}" class="btn btn-danger custom-delete-button">Delete</a>
                         </div>
                     </td>
                 </tr>
@@ -51,6 +51,10 @@
 
 
                     </table>
+
+                    <div class="text-center">
+                        {{ $videos->links() }}
+                     </div>
             </div>
         </div>
     </div>

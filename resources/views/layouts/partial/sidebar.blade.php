@@ -235,9 +235,9 @@
                     <li class="sidenav-item has-subnav"><a href="#" aria-haspopup="true"><span
                             class="sidenav-icon fa fa-list"></span><span class="sidenav-label">Menu</span><i class="fa-solid fa-angle-right arrow-icons"></i></a>
                         <ul class="sidenav-subnav collapse">
-                            <li><a href="Menu-list.html"><span
+                            <li><a href="{{route('admin.menus.index')}}"><span
                                     class="sidenav-icon fa fa-bars"></span>Menu List</a></li>
-                            <li><a href="Menu-create-new.html"><span
+                            <li><a href="{{route('admin.menus.create')}}"><span
                                     class="sidenav-icon fa fa-plus"></span>New Menu</a></li>
                         </ul>
                     </li>

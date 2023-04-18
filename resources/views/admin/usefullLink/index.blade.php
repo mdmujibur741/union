@@ -33,26 +33,31 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="tablerow">
-                                <td><input type="checkbox" name="" value="" /></td>
-                                <td>1</td>
-                                <td>ট্রেড লাইসেন্স</td>
-                                <td>http://chambalup.org/shopinfo</td>
-                                <td align="center">
+                           @foreach ($useFullLinks as $item)
+                           <tr class="tablerow">
+                            <td><input type="checkbox" name="" value="" /></td>
+                            <td>{{$item->id}} </td>
+                            <td> {{$item->title}} </td>
+                            <td> {{$item->link}} </td>
+                            <td align="center">
 
-                                    <a href="Usefull-edit.html" class="btn btn-warning btn-xs" style="font-size: 12px; float:left; margin-right:5px;" title="Edit">
-                                        <i class="fa fa-edit"></i></a>
-                                    <button type="button" class="btn btn-danger btn-xs" style="font-size: 12px; float:left;"><i class="fa fa-trash"></i></button>
+                                <a href="{{route('admin.usefulls.edit', $item->id)}}" class="btn btn-warning btn-xs" style="font-size: 12px; float:left; margin-right:5px;" title="Edit">
+                                    <i class="fa fa-edit"></i></a>
+                                <a onclick="return confirm('Are you sure you want to delete this item?');"  href="{{route('admin.usefulls.destroy', $item->id)}}" class="btn btn-danger btn-xs" style="font-size: 12px; float:left;"><i class="fa fa-trash"></i></a>
 
 
-                                </td>
-                            </tr>
+                            </td>
+                        </tr>
+                           @endforeach
 
                             <tr>
                                 <td colspan="10"></td>
                             </tr>
                         </tbody>
                     </table>
+                    <div class="text-center">
+                        {{ $useFullLinks->links() }}
+                     </div>
                 </form>
             </div>
         </div>

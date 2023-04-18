@@ -11,7 +11,7 @@ class ContentRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,9 @@ class ContentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'menu_id' => 'required',
+             'title' => 'required',
+             'content' => 'required',
         ];
     }
 }
